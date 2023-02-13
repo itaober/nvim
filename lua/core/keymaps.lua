@@ -4,10 +4,13 @@ local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
 keymap.set("i", "jj", "<ESC>", { desc = "custom esc insert mode" })
+keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 keymap.set("n", "<C-d>", "10j", { desc = "move down 10 line" })
 keymap.set("n", "<C-u>", "10k", { desc = "move up 10 line" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "remove highlight" })
-keymap.set("n", "x", '"_x', { desc = "delete a character but not copy"})
+keymap.set("n", "x", '"_x', { desc = "delete a character but not copy" })
+-- keymap.set("n", "p", '"0p')
+-- keymap.set("v", "p", '"0p')
 
 -- split window
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" })
@@ -26,6 +29,11 @@ keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "toggle nvim tree" })
 
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "find files in current working directory" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "search string in current working directory" })
+vim.keymap.set(
+	"n",
+	"<leader>fg",
+	"<cmd>Telescope live_grep<CR>",
+	{ desc = "search string in current working directory" }
+)
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "" })

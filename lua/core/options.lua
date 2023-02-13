@@ -1,6 +1,10 @@
 -- for conciseness
 local opt = vim.opt
 
+vim.scriptencoding = "utf-8"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+
 -- line numbers
 opt.number = true
 opt.numberwidth = 2
@@ -14,16 +18,16 @@ opt.smartindent = true
 opt.softtabstop = 2
 
 -- line wrapping
-opt.wrap = true 
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
 
 -- cursor line
-opt.cursorline = true 
+opt.cursorline = true
 
-opt.termguicolors = true 
+opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
