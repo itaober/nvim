@@ -5,6 +5,7 @@ local keymap = vim.keymap -- for conciseness
 -- general keymaps
 keymap.set("i", "jj", "<ESC>", { desc = "custom esc insert mode" })
 keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
+keymap.set("n", "<C-q>", "<cmd>q<CR>", { desc = "quite" })
 keymap.set("n", "<C-d>", "10j", { desc = "move down 10 line" })
 keymap.set("n", "<C-u>", "10k", { desc = "move up 10 line" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "remove highlight" })

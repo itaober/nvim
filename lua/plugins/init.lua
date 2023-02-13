@@ -32,7 +32,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- Colorschemes
-	use({ "luisiacc/gruvbox-baby", { branch = "main" } })
+	use({ "luisiacc/gruvbox-baby", branch = "main" })
 
 	-- essential plugins
 	use("tpope/vim-surround")
@@ -52,6 +52,7 @@ return packer.startup(function(use)
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- fuzzy finding
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -97,6 +98,12 @@ return packer.startup(function(use)
 	-- auto closing
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
+
+	-- git
+	use("lewis6991/gitsigns.nvim")
+
+	-- Alpha
+	use("goolord/alpha-nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
