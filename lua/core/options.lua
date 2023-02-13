@@ -39,3 +39,5 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.completeopt = "menu,menuone,noselect"
+
+opt.fillchars = { eob = " " }
