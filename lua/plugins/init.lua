@@ -86,6 +86,7 @@ return packer.startup(function(use)
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jay-babu/mason-null-ls.nvim")
+	use("MunifTanjim/prettier.nvim")
 
 	-- treesitter
 	use({
