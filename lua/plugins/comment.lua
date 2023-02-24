@@ -1,11 +1,11 @@
 local commentStatus, comment = pcall(require, "Comment")
 if not commentStatus then
-  return
+	return
 end
 
 local todoStatus, todo = pcall(require, "todo-comments")
 if not todoStatus then
-  return
+	return
 end
 
 comment.setup()
