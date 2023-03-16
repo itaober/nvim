@@ -68,7 +68,7 @@ local options = {
 	headerPaddingBottom = { type = "padding", val = 2 },
 }
 
-require("alpha").setup({
+alpha.setup({
 	layout = {
 		options.headerPaddingTop,
 		options.header,

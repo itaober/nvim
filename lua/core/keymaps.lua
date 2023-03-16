@@ -29,12 +29,8 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "to right split window" })
 keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "toggle nvim tree" })
 
 -- telescope
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "find files in current working directory" })
-vim.keymap.set(
-	"n",
-	"<leader>fg",
-	"<cmd>Telescope live_grep<CR>",
-	{ desc = "search string in current working directory" }
-)
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "" })
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "" })
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "find files in current working directory" })
+keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "search string in current working directory" })
+keymap.set("n", "<leader>fo", ":Telescope oldfiles<CR>", { desc = "find recent opened files" })
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "" })
+keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "" })
