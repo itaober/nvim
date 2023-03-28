@@ -34,3 +34,6 @@ keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "search s
 keymap.set("n", "<leader>fo", ":Telescope oldfiles<CR>", { desc = "find recent opened files" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "" })
+
+-- Zen mode
+keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>", { silent = true }, { desc = "toggle zen mode" })
