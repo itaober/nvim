@@ -1,12 +1,3 @@
-local status, null_ls = pcall(require, "null-ls")
-if not status then
-	return
-end
-
-local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
-local completion = null_ls.builtins.completion
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local on_attach = function(current_client, bufnr)
@@ -29,14 +20,22 @@ local on_attach = function(current_client, bufnr)
 	end
 end
 
-null_ls.setup({
-	sources = {
-		formatting.prettier,
-		formatting.stylua,
-		formatting.eslint_d,
-		diagnostics.eslint_d,
-		completion.spell,
+return {
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		opts = {
+			sources = {
+				require("null-ls").builtins.formatting.prettier,
+				require("null-ls").builtins.formatting.stylua,
+				require("null-ls").builtins.formatting.eslint_d,
+				require("null-ls").builtins.diagnostics.eslint_d,
+				require("null-ls").builtins.completion.spell,
+			},
+			-- configure format on save
+			on_attach = on_attach,
+		},
+		config = function(_, opts)
+			require("null-ls").setup(opts)
+		end,
 	},
-	-- configure format on save
-	on_attach = on_attach,
-})
+}

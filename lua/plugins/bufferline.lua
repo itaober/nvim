@@ -1,21 +1,27 @@
-local status, bufferline = pcall(require, "bufferline")
-if not status then
-	return
-end
-
-bufferline.setup({
-	options = {
-		offsets = {
-			{
-				filetype = "NvimTree",
-				text = "File Explorer",
-				highlight = "Directory",
-				text_align = "left",
+return {
+	{
+		"akinsho/bufferline.nvim",
+		version = "v3.*",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			options = {
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "File Explorer",
+						highlight = "Directory",
+						text_align = "left",
+					},
+				},
 			},
 		},
+		config = function(_, opts)
+			require("bufferline").setup(opts)
+		end,
+		keys = {
+			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "" },
+			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "" },
+			{ "<leader>x", "<Cmd>bp <BAR> bd #<CR>", desc = "" },
+		},
 	},
-})
-
-vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {})
-vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
-vim.keymap.set("n", "<leader>x", "<Cmd>bp <BAR> bd #<CR>", {})
+}

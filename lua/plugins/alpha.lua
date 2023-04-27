@@ -1,8 +1,3 @@
-local status, alpha = pcall(require, "alpha")
-if not status then
-	return
-end
-
 local function button(sc, txt, keybind)
 	local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
@@ -68,12 +63,20 @@ local options = {
 	headerPaddingBottom = { type = "padding", val = 2 },
 }
 
-alpha.setup({
-	layout = {
-		options.headerPaddingTop,
-		options.header,
-		options.headerPaddingBottom,
-		options.buttons,
+return {
+	{
+		"goolord/alpha-nvim",
+		opts = {
+			layout = {
+				options.headerPaddingTop,
+				options.header,
+				options.headerPaddingBottom,
+				options.buttons,
+			},
+			opts = {},
+		},
+		config = function(_, opts)
+			require("alpha").setup(opts)
+		end,
 	},
-	opts = {},
-})
+}
